@@ -1,0 +1,16 @@
+{
+  "name": "llm-wiki",
+  "source": "./plugins/llm-wiki",
+  "description": "Ingest sources (files, URLs, YouTube videos, pasted text) into a structured LLM wiki per your vault's schema. Provides ingest, query, and lint skills.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Jordan"
+  },
+  "tags": [
+    "productivity",
+    "knowledge-management",
+    "obsidian",
+    "llm-wiki",
+    "pkm"
+  ]
+}

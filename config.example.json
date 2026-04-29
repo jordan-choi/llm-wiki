@@ -1,0 +1,5 @@
+{
+  "vault_path": "/absolute/path/to/your/obsidian/vault",
+  "wiki_dir": "wiki",
+  "raw_dir": "raw"
+}
