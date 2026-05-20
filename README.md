@@ -40,11 +40,18 @@ If you already have a `CLAUDE.md` defining a wiki schema, you can ask Claude to 
 
 ## Install
 
-Claude Code, Cowork, and Codex can install the plugin from the `jordanchoi` marketplace:
+Claude Code and Cowork can install the plugin from the `jordanchoi` marketplace:
 
 ```
-/plugin marketplace add jordanchoi/jordan-marketplace
+/plugin marketplace add jordan-choi/jordan-marketplace
 /plugin install llm-wiki@jordanchoi
+```
+
+Codex CLI can add the same marketplace by Git URL:
+
+```bash
+codex plugin marketplace add git@github.com:jordan-choi/jordan-marketplace.git
+codex plugin install llm-wiki@jordanchoi
 ```
 
 ## Configure
