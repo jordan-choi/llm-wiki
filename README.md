@@ -1,6 +1,6 @@
 # llm-wiki
 
-A Claude Code / Cowork plugin that turns an Obsidian-based markdown vault into a disciplined, queryable LLM wiki — with idempotent ingestion, cheap retrieval, and auto-fix maintenance.
+A Claude Code / Cowork / Codex plugin that turns an Obsidian-based markdown vault into a disciplined, queryable LLM wiki — with idempotent ingestion, cheap retrieval, and auto-fix maintenance.
 
 ## What this is
 
@@ -35,10 +35,12 @@ If you already have a `CLAUDE.md` defining a wiki schema, you can ask Claude to 
 ## Requirements
 
 - **A vault with a `CLAUDE.md` schema** defining your wiki conventions — page types, sub-indexes, log/hot.md format. See [Schema reference](#schema-reference) below for the assumed structure.
-- **Claude Code or Cowork** with plugin support.
+- **Claude Code, Cowork, or Codex** with plugin support.
 - **YouTube transcript MCP** (optional): `@jordanchoi/mcp-server-youtube-transcript` is declared in this plugin's `.mcp.json` — installs via `npx` on first use. Required only if you want to ingest YouTube URLs.
 
 ## Install
+
+Claude Code, Cowork, and Codex can install the plugin from the `jordanchoi` marketplace:
 
 ```
 /plugin marketplace add jordanchoi/jordan-marketplace
@@ -224,4 +226,6 @@ If you don't ingest YouTube at all, you can delete `.mcp.json` — the plugin wo
 
 ## Version
 
-**0.1.0** — initial release. Three skills, four input types, twelve lint checks (six with auto-fix).
+**0.1.1** — adds Codex plugin metadata while keeping the Claude Code / Cowork manifest.
+
+**0.1.0** — initial release for Claude Code / Cowork.
