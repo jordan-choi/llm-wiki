@@ -1,0 +1,32 @@
+{
+  "name": "llm-wiki",
+  "version": "0.1.1",
+  "description": "Ingest sources into a structured LLM wiki with query and lint workflows.",
+  "author": {
+    "name": "Jordan"
+  },
+  "homepage": "https://github.com/jordan-choi/llm-wiki",
+  "repository": "https://github.com/jordan-choi/llm-wiki",
+  "keywords": [
+    "productivity",
+    "knowledge-management",
+    "obsidian",
+    "llm-wiki",
+    "pkm"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "LLM Wiki",
+    "shortDescription": "Ingest, query, and lint structured markdown knowledge bases",
+    "longDescription": "Use LLM Wiki to capture files, URLs, YouTube videos, and pasted text into a structured markdown wiki, then query and lint it with citation discipline.",
+    "developerName": "Jordan",
+    "category": "Productivity",
+    "capabilities": ["Interactive", "Read", "Write"],
+    "defaultPrompt": [
+      "Ingest this source into my LLM wiki.",
+      "Query my LLM wiki about this topic.",
+      "Lint my LLM wiki and fix safe issues."
+    ]
+  }
+}
