@@ -2,7 +2,7 @@
   "name": "llm-wiki",
   "source": "./plugins/llm-wiki",
   "description": "Ingest sources (files, URLs, YouTube videos, pasted text) into a structured LLM wiki per your vault's schema. Provides ingest, query, and lint skills.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": {
     "name": "Jordan"
   },

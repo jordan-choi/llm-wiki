@@ -24,7 +24,7 @@ If you already have a `CLAUDE.md` defining a wiki schema, you can ask Claude to 
 | Idempotency guard                  |    weak (agent often forgets)     |       grep-based, every time        |
 | Bidirectional citation enforcement |          ~70% adherence           |         ~95% on fresh pages         |
 | `--ingest` lint scope              |              absent               | one command for post-ingest cleanup |
-| `--fix` auto-fixes                 |              absent               |    6 mechanical safe categories     |
+| `--fix` auto-fixes                 |              absent               |    5 mechanical safe categories     |
 | Hot-cache hygiene                  |              manual               |        compress-before-trim         |
 | Token cost per invocation          |    higher (re-reads CLAUDE.md)    |                lower                |
 
@@ -232,6 +232,8 @@ If you don't ingest YouTube at all, you can delete `.mcp.json` — the plugin wo
 - **No `--replace` in v0.1** — to upgrade a pasted-text source to URL-backed, edit the frontmatter manually. `--replace` ships in v0.2.
 
 ## Version
+
+**0.1.2** — lint: empty template sections (e.g. `## Open questions` with no open unknowns) are now a soft/informational flag rather than a violation, and are never auto-fixed with an empty header — aligns with the vault CLAUDE.md "Empty sections" rule. Five lint checks now auto-fix (was six).
 
 **0.1.1** — adds Codex plugin metadata while keeping the Claude Code / Cowork manifest.
 

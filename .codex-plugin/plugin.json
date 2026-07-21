@@ -1,6 +1,6 @@
 {
   "name": "llm-wiki",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Ingest sources into a structured LLM wiki with query and lint workflows.",
   "author": {
     "name": "Jordan"
