@@ -81,7 +81,7 @@ Each check is marked **[F]** (full-wiki only — needs cross-page state) or **[P
    - Flag as "possible mistaken ingest — user to confirm" ONLY if the source page is additionally thin-bodied AND has no inbound wikilinks.
    - **Never delete** a source page without explicit user confirmation.
 9. **[P] Schema conformance — Related-link citations** — every entry in `## Related` on entity/concept/synthesis pages must end with `[[sources/<source-slug>]]`. Surface entries missing the citation. (Enforces the bidirectional-links amendment in CLAUDE.md.)
-10. **[P] Schema conformance — required body sections** — entity/concept/synthesis pages must include the sections defined by their template in CLAUDE.md (`## Summary`, `## Key facts`, `## Related`, `## Open questions`, `## Source log` for entities/concepts; equivalents for synthesis). Flag missing sections.
+10. **[P] Schema conformance — required body sections** — entity/concept/synthesis pages should include the sections defined by their template in CLAUDE.md (`## Summary`, `## Key facts`, `## Related`, `## Open questions`, `## Source log` for entities/concepts; equivalents for synthesis). Flag missing sections — **but** a section a page *genuinely has nothing for* (e.g. `## Open questions` with no open unknowns) may be omitted per CLAUDE.md's **Empty sections** rule; report such an omission as a **soft/informational** flag, not a violation, and never auto-insert an empty header (an empty section is a stub).
 11. **[P] Schema conformance — required frontmatter** — requirements vary by page type:
     - **Sources** (`type: source`): `title`, `type`, `source_kind`, `ingested`, `updated`. Either `raw_path` OR `source_url` (or NEITHER for pasted-text). Use `ingested` as the creation timestamp; do NOT require `created` on source pages.
     - **Entities / concepts / synthesis**: `title`, `type`, `created`, `updated`, `sources` list (may be empty).
@@ -168,7 +168,6 @@ By default, lint reports findings without modifying any files. With `--fix`, lin
 | 5 | Out-of-sync metadata | Set `updated:` to today; sync `sources:` frontmatter list to body citations |
 | 8 | Dead `raw_path:` targets | Append dated `## Update YYYY-MM-DD` section to source page documenting deletion (the existing append-Update flow) |
 | 9 | Related-link citations missing | Append `[[sources/<slug>]]` to each Related entry, derived from the page's `sources:` frontmatter — only when source-of-citation is unambiguous (see Ambiguity guard) |
-| 10 | Required body sections missing | Add empty section header (e.g., `## Open questions` with no body) — user fills content later |
 | 11 | Required frontmatter missing | Add defaultable fields only: `tags: []`, `created:` / `updated:` to today. Leave `title`, `type`, `source_kind`, `source_url`, `raw_path` for user — those need human input |
 | 12 | Hot cache hygiene | Compress entries older than 24 hours to one-line headlines (`### [YYYY-MM-DD] <title> — see [[wikilink]]`). Trim only if still over budget after compression. Never compress entries < 24h old. |
 
@@ -180,6 +179,7 @@ By default, lint reports findings without modifying any files. With `--fix`, lin
 - **Missing entity/concept pages** (#4) — requires substantive content
 - **Unresolved markers** (#6) — TODO content needs resolution
 - **Data gaps** (#7) — would require web fetch, separate decision
+- **Required body sections missing** (#10) — never auto-insert an empty header; an empty section is a stub, and a genuinely-empty section may be legitimately omitted (CLAUDE.md **Empty sections** rule). Report-only soft flag.
 
 These remain in the report as findings only.
 
